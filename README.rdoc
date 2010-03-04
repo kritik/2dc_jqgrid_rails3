@@ -22,6 +22,12 @@ A sample app is available here : http://github.com/ahe/jqgrid_demo_app
 You can now generate a grid using a command like this one :
 
   $ ./script/generate jqgrid user id pseudo email firstname
+  
+= RAILS 3
+
+Install:
+
+  rails plugin install git://github.com/ahe/2dc_jqgrid.git
 
 
 Copyright (c) 2009 Anthony Heukmes, released under the MIT license
