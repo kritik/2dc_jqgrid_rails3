@@ -1,23 +1,22 @@
 module Jqgrid
 
-    @@jrails_present = false
-    mattr_accessor :jrails_present
+#    @@jrails_present = false
+#    mattr_accessor :jrails_present
 
     def jqgrid_stylesheets
-      css  = stylesheet_link_tag('jqgrid/jquery-ui-1.7.1.custom.css') + "\n"
+      css  = stylesheet_link_tag('jqgrid/jquery-ui-1.8.custom.css') + "\n"
       css << stylesheet_link_tag('jqgrid/ui.jqgrid.css') + "\n"
     end
 
     def jqgrid_javascripts
       locale = I18n.locale rescue :en
-      js =  ''
-      js << javascript_include_tag('jqgrid/jquery.js') + "\n" unless Jqgrid.jrails_present
-      js << javascript_include_tag('jqgrid/jquery-ui-1.7.1.custom.min.js') + "\n"
-      js << javascript_include_tag('jqgrid/jquery.layout.js') + "\n"
+      js = javascript_include_tag('jqgrid/jquery-ui-1.8.custom.min.js') + "\n"
       js << javascript_include_tag("jqgrid/i18n/grid.locale-#{locale}.js") + "\n"
       js << javascript_include_tag('jqgrid/jquery.jqGrid.min.js') + "\n"
-      js << javascript_include_tag('jqgrid/jquery.tablednd.js') + "\n"
-      js << javascript_include_tag('jqgrid/jquery.contextmenu.js') + "\n"
+      # Don't know if we need it, if smth not working, just uncomment it
+      #js << javascript_include_tag('jqgrid/jquery.layout.js') + "\n"
+      #js << javascript_include_tag('jqgrid/jquery.tablednd.js') + "\n"
+      #js << javascript_include_tag('jqgrid/jquery.contextmenu.js') + "\n"
     end
 
     def jqgrid(title, id, action, columns = [], options = {})

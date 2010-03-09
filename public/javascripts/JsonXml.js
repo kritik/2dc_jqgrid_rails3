@@ -5,7 +5,7 @@
 
 	License:     http://creativecommons.org/licenses/LGPL/2.1/
 	Author:      Stefan Goessner/2006
-	Web:         http://goessner.net/ 
+	Web:         http://goessner.net/
 
 	Modifications made:
 
@@ -14,7 +14,7 @@
 	             added handling of empty arrays, empty strings, and int/floats values.
 	Author:      Michael Schøler/2008-01-29
 	Web:         http://michael.hinnerup.net/blog/2008/01/26/converting-json-to-xml-and-xml-to-json/
-	
+
 	Description: json2xml added support to convert functions as CDATA
 	             so it will be easy to write characters that cause some problems when convert
 	Author:      Tony Tomov
@@ -88,7 +88,7 @@ var xmlJsonClass = {
 			else {
 				if (v.toString() === "\"\"" || v.toString().length === 0) {
 					xml += ind + "<" + name + ">__EMPTY_STRING_</" + name + ">";
-				} 
+				}
 				else {
 					xml += ind + "<" + name + ">" + v.toString() + "</" + name + ">";
 				}
@@ -224,11 +224,11 @@ var xmlJsonClass = {
 			json += (name ? ":[]" : "[]");
 		}
 		else if (o instanceof Array) {
-			var n, i;
+			var n, i, ar=[];
 			for (i = 0, n = o.length; i < n; i += 1) {
-				o[i] = this.toJson(o[i], "", ind + "\t");
+				ar[i] = this.toJson(o[i], "", ind + "\t");
 			}
-			json += (name ? ":[" : "[") + (o.length > 1 ? ("\n" + ind + "\t" + o.join(",\n" + ind + "\t") + "\n" + ind) : o.join("")) + "]";
+			json += (name ? ":[" : "[") + (ar.length > 1 ? ("\n" + ind + "\t" + ar.join(",\n" + ind + "\t") + "\n" + ind) : ar.join("")) + "]";
 		}
 		else if (o === null) {
 			json += (name && ":") + "null";
@@ -244,11 +244,11 @@ var xmlJsonClass = {
 		else if (typeof(o) === "string") {
 			var objRegExp  = /(^-?\d+\.?\d*$)/;
 			var FuncTest = /function/i;
-			o = o.toString();
-			if (objRegExp.test(o) || FuncTest.test(o) || o==="false" || o==="true") {
+			var os = o.toString();
+			if (objRegExp.test(os) || FuncTest.test(os) || os==="false" || os==="true") {
 				// int or float
-				json += (name && ":") + o;
-			} 
+				json += (name && ":") + os;
+			}
 			else {
 				json += (name && ":") + "\"" + o + "\"";
 			}
