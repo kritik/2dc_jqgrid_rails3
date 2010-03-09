@@ -28,7 +28,7 @@ You can now generate a grid using a command like this one :
 Install:
 
   rails plugin install git://github.com/ahe/2dc_jqgrid.git
-    fe
+
 
 Copyright (c) 2009 Anthony Heukmes, released under the MIT license
 
