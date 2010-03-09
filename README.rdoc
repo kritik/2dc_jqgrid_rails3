@@ -24,10 +24,12 @@ You can now generate a grid using a command like this one :
   $ ./script/generate jqgrid user id pseudo email firstname
   
 = RAILS 3
+Didn't try generate scripts in rails 3
 
 Install:
 
-  rails plugin install git://github.com/ahe/2dc_jqgrid.git
+  rails plugin install git://github.com/ahe/2dc_jqgrid_rails3.git
+add jquery library like in page http://joshhuckabee.com/jquery-rails-3
 
 
 Copyright (c) 2009 Anthony Heukmes, released under the MIT license
