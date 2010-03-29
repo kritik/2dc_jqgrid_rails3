@@ -5,7 +5,8 @@ namespace :jqgrid do
 	  Rake::Task[ "jqgrid:uninstall" ].execute
     %w(javascripts stylesheets images).each do |dir|
       source = File.expand_path(File.join(File.dirname(__FILE__),'..', '..', 'public', dir))
-      target = File.join(RAILS_ROOT, 'public', dir, 'jqgrid')
+      target = File.join(Rails.root, 'public', dir, 'jqgrid')
+      FileUtils.mkdir_p target
       FileUtils.cp_r(source, target, :verbose => true)
     end
 	end
