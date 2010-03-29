@@ -28,7 +28,7 @@ Didn't try generate scripts in rails 3
 
 Install:
 
-  rails plugin install git://github.com/ahe/2dc_jqgrid_rails3.git
+  rails plugin install git://github.com/kritik/2dc_jqgrid_rails3.git
 add jquery library like in page http://joshhuckabee.com/jquery-rails-3
 
 
