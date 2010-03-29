@@ -14,7 +14,7 @@ namespace :jqgrid do
   desc 'Remove javascripts, stylesheets and images from public'
   task :uninstall do
     %w(javascripts stylesheets images).each do |dir|
-      target = File.join(RAILS_ROOT, 'public', dir, 'jqgrid')
+      target = File.join(Rails.root, 'public', dir, 'jqgrid')
       FileUtils.rm_rf(target, :verbose => true)
     end
   end
